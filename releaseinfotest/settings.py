@@ -132,6 +132,7 @@ RELEASE_INFO = {
     "author": "pragmatic minds",
     "author_url": "https://pragmaticminds.de",
     "contact_email": "info@pragmaticminds.de",
+    "contact_text": "You need help or have a question?",
     "picture_path": "images/logo.svg",
     "fonts": [
         {"name": "FuturaStd-Book", "url": "fonts/FuturaStd-Book.woff2"},
