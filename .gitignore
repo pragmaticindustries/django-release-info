@@ -1,6 +1,7 @@
 db.sqlite3
 venv
 release_info/dist
+staticfiles
 
 /.idea/
 **/*.pyc

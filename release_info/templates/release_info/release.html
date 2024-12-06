@@ -24,10 +24,9 @@
 
 <style>
     {% block font %}
-    @font-face {font-family: 'FuturaStd-Book'; src: url({% static 'release_info/fonts/FuturaStd-Book.woff2' %});}
-    @font-face {font-family: 'FuturaStd-Medium'; src: url({% static 'release_info/fonts/FuturaStd-Medium.woff2' %});}
-    @font-face {font-family: 'FuturaStd-Bold'; src: url({% static 'release_info/fonts/FuturaStd-Bold.woff2' %});}
-    @font-face {font-family: 'FuturaStd-Heavy'; src: url({% static 'release_info/fonts/FuturaStd-Heavy.woff2' %});}
+    {% for font in info.fonts %}
+    @font-face {font-family: '{{ font.name }}'; src: url({% static font.url %});}
+    {% endfor %}
     {% endblock font %}
     
     #release{
@@ -59,9 +58,11 @@
 {% block content %}
 <div id="release">
 
+    {% if info.picture_path %}
     <div style="border-bottom-width: 1px;">
-        <img src="{% static 'release_info/images/logo.svg' %}" alt="">
+        <img src="{% static info.picture_path %}" alt="company logo">
     </div>
+    {% endif %}
 
     <h1>Release updates</h1>
     <a style="text-decoration: underline;">{{info.product_name}}</a>

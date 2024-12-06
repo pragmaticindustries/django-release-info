@@ -117,6 +117,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -127,7 +129,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 RELEASE_INFO = {
     "product_name": "Django Release Info",
-    "author": "pragamatic minds",
+    "author": "pragmatic minds",
     "author_url": "https://pragmaticminds.de",
     "contact_email": "info@pragmaticminds.de",
+    "picture_path": "images/logo.svg",
+    "fonts": [
+        {"name": "FuturaStd-Book", "url": "fonts/FuturaStd-Book.woff2"},
+        {
+            "name": "FuturaStd-Medium",
+            "url": "fonts/FuturaStd-Medium.woff2",
+        },
+        {"name": "FuturaStd-Bold", "url": "fonts/FuturaStd-Bold.woff2"},
+        {"name": "FuturaStd-Heavy", "url": "fonts/FuturaStd-Heavy.woff2"},
+    ],
 }
