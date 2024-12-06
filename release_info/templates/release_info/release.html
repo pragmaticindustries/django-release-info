@@ -34,59 +34,46 @@
         color: #202124;
         letter-spacing: 0.025em;
         max-width: 40rem;
-        padding: 5rem 2rem;
+        padding: 3rem 2rem;
         font-size: 0.75rem;
         margin: auto;
         overflow: auto;
         height: 100%;
         font-family: '{{info.fonts.content.name}}';
         
-        h1 {font-size: xx-large; padding-top: 3rem; font-family: '{{info.fonts.header.name}}';}
+        h1 {font-family: '{{info.fonts.header.name}}'; font-size: xx-large; padding-top: 3rem; margin: 0; font-weight: normal;}
         p {color: #9CA3AF; padding-top: 0.5rem;}
-        a:hover {text-decoration: underline; color: #2FA8E1;}
+        a {color: #2FA8E1; padding: 0.25rem 0; position: relative;}
+        a:hover {background-color: #2FA8E1; color: #2FA8E1; text-decoration: none; cursor: pointer; fill: #2FA8E1;}
         
-        table {width: 100%; margin-top: 3rem;}
-        tbody {border-bottom-width: 1px;}
+        table {width: 100%; margin-top: 3rem; font-size: 0.75rem; border-collapse: collapse;}
+        tbody {border-bottom: 1px solid rgb(229, 231, 235);}
         tr {cursor: pointer;}
-        th {text-align: left; padding: 0.75rem; color: #9CA3AF; letter-spacing: 0.15em; text-transform: uppercase;}
+        th {font-family: '{{ info.fonts.header.name }}'; text-align: left; padding: 0.75rem; color: #9CA3AF; letter-spacing: 0.15em; text-transform: uppercase;}
         td {text-align: left; padding: 0.75rem;}
 
         .expandable-row:hover {cursor: pointer; color: #2FA8E1; user-select: none;}
         .detail-row > td > div {background: #F4F4F4; padding: 0.5rem 0; max-width: 35rem; line-height: 2; white-space: pre-wrap; margin: -1rem 0rem 1rem 0.5rem;}
         .hidden {display: none;}
-    }
 
-    .top-bar {
-        background-color: #343a40;
-        text-align: left;
-        border-bottom: 1px solid #e0e0e0;
-    }
+        .top-bar {padding-bottom: 2rem;}
+        .top-bar > a {text-decoration: none; height: 1.5rem; display: flex; align-items: center;}
+        .logo {border-bottom: 1px solid rgb(229, 231, 235);}
+        .logo img {height: 2.5rem;}
 
-    .top-bar a {
-        text-decoration: none;
-        color: #ffffff;
-        padding: 1rem;
-        display: inline-block;
-    }
-
-    .top-bar a:hover {
-        text-decoration: underline;
-    }
-
-    .logo {
-        border-bottom: 1px solid rgb(229, 231, 235);
-    }
-
-    .logo img {
-        height: 2.5rem;
+        .blubb {right: 0; top: 50%; z-index: -10; transform: translateY(-50%); transition-duration: 500ms; position: absolute; fill: none;}
+        a:hover > span{transform: translateX(60px) translateY(-50%); fill: #202124;}
     }
 </style>
-
 {% block content %}
-<div class="top-bar">
-    <a href="/">&larr; Back</a>
-</div>
+
+
 <div id="release">
+    <div class="top-bar">
+        <a href="/">
+            <svg style="height: 1rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M15 239c-9.4 9.4-9.4 24.6 0 33.9L207 465c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L65.9 256 241 81c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L15 239z"/></svg>
+        </a>
+    </div>
 
     {% if info.picture_path %}
     <div class="logo">
@@ -95,12 +82,17 @@
     {% endif %}
 
     <h1>Release updates</h1>
-    <a style="text-decoration: underline;">{{info.product_name}}</a>
+    <span>{{info.product_name}}</span>
     <span>by</span>
     <a  href="{{info.author_url}}" target="_blank">{{info.author}}</a>
     {% if info.contact_email %}
         <span>|</span>
-        <a href="mailto:{{ info.contact_email }}">{{ info.contact_text|default:info.contact_email }}</a>
+        <a  href="mailto:{{ info.contact_email }}">
+            {{ info.contact_text|default:info.contact_email }}
+            <span class="blubb">
+                <svg style="height: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Pro 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M639.7 10.2c1-3.6-.6-7.5-3.9-9.2s-7.4-1-9.9 1.9L490.5 162.1c-8.9-1.4-18.1-2.1-27.4-2.1c-50.9 0-100.7 17.5-140.2 49.6L154.1 346.8c-10.5 8.5-26.1 1.1-26.1-12.4l0-78.9 25.2-15.1c24.1-14.5 38.8-40.5 38.8-68.6l0-59.8c0-6-3.3-11.4-8.6-14.2s-11.7-2.3-16.6 1.1L96 148.5 25.2 98.9c-4.9-3.4-11.3-3.8-16.6-1.1S0 106 0 112l0 59.8c0 28.1 14.7 54.1 38.8 68.6L64 255.5 64 352c0 88.4 71.6 160 160 160l240 0c97.2 0 176-78.8 176-176c0-50.4-21.5-95.9-55.7-128L639.7 10.2zM570.9 196.6c-18.4-14.1-39.6-24.7-62.6-30.7L614.5 41 570.9 196.6zM96 168l9.2-6.4L176 112l0 59.8c0 22.5-11.8 43.3-31.1 54.9l-25.2 15.1-7.8 4.7 0 9.1 0 78.9c0 26.9 31.3 41.8 52.2 24.8L333 222c36.6-29.8 82.8-46 130.1-46C551.6 176 624 247.7 624 336c0 88.4-71.6 160-160 160l-240 0c-79.5 0-144-64.5-144-144l0-96.5 0-9.1-7.8-4.7L47.1 226.6C27.8 215.1 16 194.2 16 171.8L16 112l70.8 49.6L96 168zM512 304a16 16 0 1 0 -32 0 16 16 0 1 0 32 0z"/></svg>
+            </span>
+        </a>
     {% endif %}
     {% if version %}
     <p>v{{ version }} released on {{ release_date }}</p>
