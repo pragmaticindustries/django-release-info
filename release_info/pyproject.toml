@@ -7,13 +7,13 @@ include = ["release_info*"]
 
 [project]
 name = "django-release-info"
-version = "0.0.1"
+version = "0.0.3"
 dependencies = [
     "Django>=3.2",
     "markdown==3.7",
 ]
 description = "A Django app to show CHANGELOG.md."
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">= 3.10"
 authors = [
     {name = "pragmatic minds", email = "info@pragmaticminds.de"},
