@@ -134,5 +134,8 @@ RELEASE_INFO = {
     "contact_email": "info@pragmaticminds.de",
     "contact_text": "You need help or have a question?",
     "picture_path": "images/logo.svg",
-    "font": {"name": "FuturaStd-Medium", "url": "fonts/FuturaStd-Medium.woff2"},
+    "fonts": {
+        "header": {"name": "FuturaStd-Medium", "url": "fonts/FuturaStd-Medium.woff2"},
+        "content" : {"name": "FuturaStd-Book", "url": "fonts/FuturaStd-Book.woff2"},
+    },
 }

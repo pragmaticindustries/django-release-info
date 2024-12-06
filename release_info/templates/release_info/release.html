@@ -24,7 +24,10 @@
 
 <style>
     {% block font %}
-    @font-face {font-family: '{{ info.font.name }}'; src: url({% static info.font.url %});}
+        {% if info.fonts %}
+                @font-face {font-family: '{{ info.fonts.header.name }}'; src: url({% static info.fonts.header.url %});}
+                @font-face {font-family: '{{ info.fonts.content.name }}'; src: url({% static info.fonts.content.url %});}
+        {% endif %}
     {% endblock font %}
     
     #release {
@@ -36,16 +39,16 @@
         margin: auto;
         overflow: auto;
         height: 100%;
-        font-family: '{{info.font.name}}';
+        font-family: '{{info.fonts.content.name}}';
         
-        h1 {font-size: xx-large; padding-top: 3rem; font-family: 'FuturaStd-Medium';}
+        h1 {font-size: xx-large; padding-top: 3rem; font-family: '{{info.fonts.header.name}}';}
         p {color: #9CA3AF; padding-top: 0.5rem;}
         a:hover {text-decoration: underline; color: #2FA8E1;}
         
         table {width: 100%; margin-top: 3rem;}
         tbody {border-bottom-width: 1px;}
         tr {cursor: pointer;}
-        th {text-align: left; padding: 0.75rem; color: #9CA3AF; letter-spacing: 0.15em; text-transform: uppercase; font-family: 'FuturaStd-Medium';}
+        th {text-align: left; padding: 0.75rem; color: #9CA3AF; letter-spacing: 0.15em; text-transform: uppercase;}
         td {text-align: left; padding: 0.75rem;}
 
         .expandable-row:hover {cursor: pointer; color: #2FA8E1; user-select: none;}
@@ -69,6 +72,14 @@
     .top-bar a:hover {
         text-decoration: underline;
     }
+
+    .logo {
+        border-bottom: 1px solid rgb(229, 231, 235);
+    }
+
+    .logo img {
+        height: 2.5rem;
+    }
 </style>
 
 {% block content %}
@@ -78,7 +89,7 @@
 <div id="release">
 
     {% if info.picture_path %}
-    <div style="border-bottom-width: 1px;">
+    <div class="logo">
         <img src="{% static info.picture_path %}" alt="company logo">
     </div>
     {% endif %}
