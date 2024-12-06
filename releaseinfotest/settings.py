@@ -134,13 +134,5 @@ RELEASE_INFO = {
     "contact_email": "info@pragmaticminds.de",
     "contact_text": "You need help or have a question?",
     "picture_path": "images/logo.svg",
-    "fonts": [
-        {"name": "FuturaStd-Book", "url": "fonts/FuturaStd-Book.woff2"},
-        {
-            "name": "FuturaStd-Medium",
-            "url": "fonts/FuturaStd-Medium.woff2",
-        },
-        {"name": "FuturaStd-Bold", "url": "fonts/FuturaStd-Bold.woff2"},
-        {"name": "FuturaStd-Heavy", "url": "fonts/FuturaStd-Heavy.woff2"},
-    ],
+    "font": {"name": "FuturaStd-Medium", "url": "fonts/FuturaStd-Medium.woff2"},
 }

@@ -24,12 +24,10 @@
 
 <style>
     {% block font %}
-    {% for font in info.fonts %}
-    @font-face {font-family: '{{ font.name }}'; src: url({% static font.url %});}
-    {% endfor %}
+    @font-face {font-family: '{{ info.font.name }}'; src: url({% static info.font.url %});}
     {% endblock font %}
     
-    #release{
+    #release {
         color: #202124;
         letter-spacing: 0.025em;
         max-width: 40rem;
@@ -38,16 +36,17 @@
         margin: auto;
         overflow: auto;
         height: 100%;
+        font-family: '{{info.font.name}}';
         
-        h1 {font-family: 'FuturaStd-Medium'; font-size:xx-large; padding-top: 3rem;}
-        p {font-family: 'FuturaStd-Book'; color: #9CA3AF; padding-top: 0.5rem;}
+        h1 {font-size: xx-large; padding-top: 3rem; font-family: 'FuturaStd-Medium';}
+        p {color: #9CA3AF; padding-top: 0.5rem;}
         a:hover {text-decoration: underline; color: #2FA8E1;}
         
         table {width: 100%; margin-top: 3rem;}
         tbody {border-bottom-width: 1px;}
         tr {cursor: pointer;}
-        th {font-family: 'FuturaStd-medium'; text-align: left; padding: 0.75rem; color: #9CA3AF; letter-spacing: 0.15em; text-transform: uppercase;}
-        td {font-family: 'FuturaStd-Book'; text-align: left; padding: 0.75rem;}
+        th {text-align: left; padding: 0.75rem; color: #9CA3AF; letter-spacing: 0.15em; text-transform: uppercase; font-family: 'FuturaStd-Medium';}
+        td {text-align: left; padding: 0.75rem;}
 
         .expandable-row:hover {cursor: pointer; color: #2FA8E1; user-select: none;}
         .detail-row > td > div {background: #F4F4F4; padding: 0.5rem 0; max-width: 35rem; line-height: 2; white-space: pre-wrap; margin: -1rem 0rem 1rem 0.5rem;}
@@ -63,7 +62,6 @@
     .top-bar a {
         text-decoration: none;
         color: #ffffff;
-        font-family: 'FuturaStd-Medium';
         padding: 1rem;
         display: inline-block;
     }
