@@ -2,6 +2,8 @@
 
 Show you CHANGELOG.md in your application
 
+![screenshot of page](screenshot.png)
+
 ## How to use
 
 Install the python package and add the app to installed apps

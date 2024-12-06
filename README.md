@@ -2,6 +2,8 @@
 
 You can find the app source code in ./release_info
 
+![screenshot of page](screenshot.png)
+
 ## Development
 
 This repo has a test project so you can clone it and run the app.
