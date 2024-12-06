@@ -1,7 +1,9 @@
 db.sqlite3
 venv
-/.idea/
+release_info/dist
 
+/.idea/
 **/*.pyc
 **/__pycache__/**/*
 **/*.log
+**/*.egg-info/

@@ -1,3 +1,6 @@
 Django==5.1.4
+build==1.2.2
 
 markdown==3.7
+
+-e ./release_info
