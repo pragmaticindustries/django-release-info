@@ -7,7 +7,7 @@ include = ["release_info"]
 
 [project]
 name = "django-release-info"
-version = "0.0.5"
+version = "0.0.6"
 dependencies = [
     "Django>=3.2",
     "markdown==3.7",
