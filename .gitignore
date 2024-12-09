@@ -8,3 +8,4 @@ staticfiles
 **/__pycache__/**/*
 **/*.log
 **/*.egg-info/
+**/dist/
