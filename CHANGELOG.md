@@ -1,14 +1,21 @@
-# 0.0.1
+# 0.0.3
 
-> 06.12.2024
+> 12.12.2024
 
-Add documentation
+Add
+
+More
+
+Lines
 
 # 0.0.2
 
 > 06.12.2024
 
-Update test
+* This
+* is
+* a
+* list
 
 # 0.0.1
 
