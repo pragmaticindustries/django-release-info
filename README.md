@@ -69,7 +69,6 @@ python manage.py runserver
 ### How to build
 
 ```bash
-cd release_info
 python -m build
 ```
 
